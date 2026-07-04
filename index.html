@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>프로젝트 소개</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1c1a17;
+    --paper: #faf7f0;
+    --paper-2: #f2ece0;
+    --line: #d8cfbe;
+    --muted: #6f6656;
+    --accent: #3a6b5e;      /* deep sage */
+    --accent-soft: #e4ede9;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "IBM Plex Sans KR", system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  header.hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: "Gowun Batang", serif;
+    font-size: clamp(38px, 7vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .lede {
+    font-size: clamp(17px, 2.4vw, 20px);
+    color: var(--muted);
+    max-width: 60ch;
+    font-weight: 300;
+  }
+
+  /* Sections */
+  section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; }
+  .sec-num {
+    font-family: "Gowun Batang", serif;
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 700;
+    padding-top: 4px;
+  }
+  .sec-title {
+    font-family: "Gowun Batang", serif;
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 700;
+  }
+  .sec-desc { color: var(--muted); font-size: 15px; margin-top: 4px; font-weight: 300; }
+
+  /* Link cards */
+  .cards { display: grid; gap: 14px; }
+  a.card {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 24px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -12px rgba(58,107,94,.28);
+    border-color: var(--accent);
+  }
+  .card-label { font-weight: 500; font-size: 16px; }
+  .card-sub { font-size: 13px; color: var(--muted); font-weight: 300; }
+  .card-arrow { color: var(--accent); font-size: 20px; flex-shrink: 0; }
+
+  /* PDF embed */
+  .pdf-frame {
+    width: 100%; height: 520px;
+    border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--paper-2); margin-top: 16px;
+  }
+
+  /* Video */
+  video {
+    width: 100%; border-radius: var(--radius);
+    border: 1px solid var(--line); background: #000; display: block;
+  }
+
+  footer { padding: 48px 0 80px; color: var(--muted); font-size: 13px; text-align: center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Ocean Digital Twin</div>
+      <h1>SeaOasis</h1>
+      <p class="lede">전 세계 다이버들이 Sea-Buddy로 수집한 바다를 하나의 3D 디지털 트윈으로. 발표 자료부터 웹, 앱, 영상까지 한 페이지에서 살펴보세요.</p>
+    </div>
+  </header>
+
+  <!-- 1. 소개 자료 -->
+  <section id="docs">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <div>
+          <div class="sec-title">소개 자료</div>
+          <div class="sec-desc">프로젝트 전체를 설명하는 발표 자료 (PDF / PPT)</div>
+        </div>
+      </div>
+      <div class="cards">
+        <a class="card" href="./docs/introduction.pdf" target="_blank" rel="noopener">
+          <div>
+            <div class="card-label">프로젝트 소개 자료</div>
+            <div class="card-sub">PDF · 새 탭에서 열기</div>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+      </div>
+      <!-- PDF를 페이지에 바로 임베드하려면 아래 주석을 해제하세요
+      <iframe class="pdf-frame" src="./docs/introduction.pdf"></iframe>
+      -->
+    </div>
+  </section>
+
+  <!-- 2. 웹 링크 -->
+  <section id="web">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <div>
+          <div class="sec-title">웹</div>
+          <div class="sec-desc">웹사이트 바로가기</div>
+        </div>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://wldn7591-cmd.github.io/Sea-Oasis_DUBU/" target="_blank" rel="noopener">
+          <div>
+            <div class="card-label">SeaOasis 웹 · 바다 디지털 트윈</div>
+            <div class="card-sub">지구본에서 바다를 골라 잠수해 보세요</div>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 앱 링크 -->
+  <section id="app">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <div>
+          <div class="sec-title">앱</div>
+          <div class="sec-desc">앱 다운로드 / 바로가기</div>
+        </div>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://mim00j.github.io/Seaoasis-app/sea-oasis-home.html" target="_blank" rel="noopener">
+          <div>
+            <div class="card-label">SeaOasis 앱</div>
+            <div class="card-sub">경로 안내 · Vital 모니터 · 다이브 로그</div>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 영상 -->
+  <section id="video">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <div>
+          <div class="sec-title">영상</div>
+          <div class="sec-desc">프로젝트 소개 영상</div>
+        </div>
+      </div>
+      <video controls preload="metadata">
+        <source src="./videos/intro.mp4" type="video/mp4" />
+        브라우저가 영상 재생을 지원하지 않습니다.
+        <a href="./videos/intro.mp4">영상 다운로드</a>
+      </video>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© 프로젝트 이름 · GitHub Pages로 배포됨</div>
+  </footer>
+</body>
+</html>
